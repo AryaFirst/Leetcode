@@ -1,0 +1,32 @@
+import java.util.*;
+public class ReverseWordToString {
+    private static  String reverseWords(String s) {
+        String space=" ";
+        String[] data=s.split(" ");
+        StringBuilder res=new StringBuilder();
+
+        for(int i=data.length-1;i>=0;i--){
+
+            String tmp=data[i];
+            if(tmp.length()==0)
+            {continue;}
+             tmp.trim();
+            res.append(tmp);
+            if(i>0)
+                res.append(" ");
+        }
+        return res.toString().trim();
+
+    }
+    public static void main(String[] args){
+        Scanner scan=new Scanner(System.in);
+        String str=scan.nextLine();
+        String res=reverseWords(str);
+        System.out.println (res);
+    }
+
+}
+
+
+//split multiple spaces: String[] data=s.split("\\s+");
+       
